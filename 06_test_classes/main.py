@@ -8,7 +8,7 @@ import leap_year
 class Tests():
     def run(self):
         for method in dir(self):
-            if str(method).startswith("test"):
+            if str(method).startswith("tests"):
                 getattr(self, method)()
 
     def assert_equal(self, expected, actual):
