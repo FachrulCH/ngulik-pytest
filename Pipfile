@@ -9,6 +9,7 @@ verify_ssl = true
 appium-python-client = "*"
 pytest = "*"
 selenium = "*"
+pytest-xdist = "*"
 
 [requires]
 python_version = "3.7"
