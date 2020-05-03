@@ -10,6 +10,7 @@ appium-python-client = "*"
 pytest = "*"
 selenium = "*"
 pytest-xdist = "*"
+pytest-html = "*"
 
 [requires]
 python_version = "3.7"
