@@ -1,0 +1,5 @@
+[
+  "tests/test_googling_pom.py::TestGooglingPom::test_search_golife[golife]",
+  "tests/test_googling_pom.py::TestGooglingPom::test_search_golife[goclean]",
+  "tests/test_googling_pom.py::TestGooglingPom::test_search_golife[gojek]"
+]

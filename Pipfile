@@ -11,6 +11,8 @@ pytest = "*"
 selenium = "*"
 pytest-xdist = "*"
 pytest-html = "*"
+black = "*"
+toolium = "*"
 
 [requires]
 python_version = "3.7"

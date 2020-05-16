@@ -1,0 +1,4 @@
+[
+  "test_joining_simple.py::TestJoiningSimple::test_join_meeting",
+  "tests/joining_test.py::TestJoining::test_join_meeting"
+]
