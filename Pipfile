@@ -11,8 +11,9 @@ pytest = "*"
 selenium = "*"
 pytest-xdist = "*"
 pytest-html = "*"
-black = "*"
 toolium = "*"
+assertpy = "*"
+faker = "*"
 
 [requires]
 python_version = "3.7"
