@@ -44,4 +44,20 @@ class TestRestfulBooking():
         created_booking = resp.json()
         print('bookingid = ', created_booking['bookingid'])
 
+    def test_booking_flow(self):
+        # Given I have booking data
+        booking_data = restful_booker.generate_dummy()
+        print('booking_data: ', booking_data)
+        # When I create booking
+        create = restful_booker.create_booking(booking_data)
+        assert_that(create.status_code, 200).is_true()
+        # Then I should see booking created correctly
+        booking_id = create.json().get('bookingid')
+        print('booking_id: ', booking_id)
+        get_booking = restful_booker.get_detail_booking(booking_id)
+        booking_detail = get_booking.json()
+        assert_that(get_booking.status_code, 200).is_true()
+        assert_that(booking_detail['firstname']).is_equal_to(booking_data['firstname'])
+        assert_that(booking_detail['lastname']).is_equal_to(booking_data['lastname'])
+        assert_that(booking_detail['bookingdates']['checkin']).is_equal_to(booking_data['bookingdates']['checkin'])
 
