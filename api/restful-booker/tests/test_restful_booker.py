@@ -61,3 +61,6 @@ class TestRestfulBooking():
         assert_that(booking_detail['lastname']).is_equal_to(booking_data['lastname'])
         assert_that(booking_detail['bookingdates']['checkin']).is_equal_to(booking_data['bookingdates']['checkin'])
 
+    def test_update_booking(self):
+        auth_token = restful_booker.get_authtoken()
+        

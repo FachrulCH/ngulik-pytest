@@ -3,9 +3,8 @@ import random
 import requests
 from faker import Faker
 
-URL = 'https://restful-booker.herokuapp.com/'
+URL = 'https://restful-booker.herokuapp.com'
 fake = Faker()
-
 
 
 def url(path: str):
@@ -33,19 +32,26 @@ def generate_dummy():
 
 def get_bookings(params=None):
     if params:
-        return requests.get(url('booking'), param=params)
+        return requests.get(url('/booking'), param=params)
     else:
-        return requests.get(url('booking'))
+        return requests.get(url('/booking'))
 
 
 def get_detail_booking(id: int):
-    return requests.get(url(f'booking/{id}'))
+    return requests.get(url(f'/booking/{id}'))
 
 
 def create_booking(booking):
-    return requests.post(url('booking'), json=booking)
+    return requests.post(url('/booking'), json=booking)
 
 
 def create_dummy_booking():
     booking = generate_dummy()
     return create_booking(booking)
+
+
+def get_authtoken(username: str = 'admin', password: str = 'password123'):
+    return requests.post(url('/auth'), json={
+        'username': username,
+        'password': password
+    }).json().get('token')
