@@ -1,0 +1,6 @@
+[
+  "tests/login_test.py::test_invalid_login",
+  "tests/auth_test.py::test_invalid_login",
+  "tests/auth_test.py::test_valid_login",
+  "tests/auth_test.py::test_logout_success"
+]

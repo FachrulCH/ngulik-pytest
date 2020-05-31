@@ -1,0 +1,4 @@
+{
+  "tests/auth_test.py::test_logout_success": true,
+  "tests/login_test.py": true
+}
