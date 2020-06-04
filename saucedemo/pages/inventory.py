@@ -12,6 +12,8 @@ class InventoryPage(BasePage):
     CART_BADGE = (By.CSS_SELECTOR, '.shopping_cart_badge')
     SIDE_MENU = (By.CSS_SELECTOR, '.bm-burger-button button')
     LOGOUT_MENU = (By.ID, 'logout_sidebar_link')
+    BTNs_ADD_CART = (By.CSS_SELECTOR, '.btn_inventory')
+    TXT_SHOPPING_CART_BADGE = (By.CSS_SELECTOR, '.shopping_cart_badge')
 
     def __init__(self, driver: webdriver.Remote):
         super(InventoryPage, self).__init__(driver)
@@ -32,5 +34,12 @@ class InventoryPage(BasePage):
         self.element(self.LOGOUT_MENU).click()
         time.sleep(1)
         assert self.driver.current_url == 'https://www.saucedemo.com/index.html'
+
+    def btn_add_cart(self):
+        return self.driver.find_elements(*self.BTNs_ADD_CART)
+
+    def get_shopping_cart_counter(self):
+        return int(self.element(self.TXT_SHOPPING_CART_BADGE).text)
+
 
 
